@@ -1,0 +1,38 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}
+
+#navStyle{
+    background-color: rgb(0, 0, 0);
+    opacity: 70%;
+    position: sticky;
+    top: 0%;
+}
+
+#navStyle h1{
+    color: white;
+    text-align: center;
+}
+
+#navStyle ul{
+    min-height: 40px;
+    display: flex;    
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+
+#navStyle li{
+    margin: 0px 10px 0px 10px;
+    justify-items: center;
+    list-style-type: none;
+    color: white;
+    opacity: 100%;
+}
