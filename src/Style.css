@@ -9,19 +9,19 @@
     flex-direction: column;
 }
 
-#navStyle{
+#nav__Style{
     background-color: rgb(0, 0, 0);
     opacity: 70%;
     position: sticky;
     top: 0%;
 }
 
-#navStyle h1{
+#nav__Style h1{
     color: white;
     text-align: center;
 }
 
-#navStyle ul{
+#nav__Style ul{
     min-height: 40px;
     display: flex;    
     justify-content: space-evenly;
@@ -29,10 +29,15 @@
 }
 
 
-#navStyle li{
+#nav__Style li{
     margin: 0px 10px 0px 10px;
     justify-items: center;
     list-style-type: none;
     color: white;
     opacity: 100%;
+}
+
+.card__img{
+    height: 300px;
+    
 }

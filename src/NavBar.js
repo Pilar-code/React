@@ -1,27 +1,22 @@
 import React from 'react';
-import IconoNav from './CartWidget'
 import {ShoppingCartOutlined} from '@ant-design/icons'
-import ItemListContainer from './ItemListContainer';
+import {Link} from 'react-router-dom'
+import 'antd/dist/antd.css'; 
+import Header from './Header'
 
-const NavBar = (nombre) => {
+const Nav = () => {
   return (
     <>
-    <nav id='navStyle'>
-      <h1>
-        <IconoNav />
-        <p>PetShop de {nombre.persona}</p>
-      </h1>
+    <nav id='nav__Style'>
+      <Header />
       <ul>
-        <li>Home</li>
-        <li>Productos</li>
-        <li>Sale</li>
-        <li>Nosotros</li>
-        <li><ShoppingCartOutlined style={{fontSize:'23px'}} /></li>
+        <Link to="/category/Cuchas">Cuchas</Link>
+        <Link to="/category/Alimentos">Alimentos</Link>
+        <Link to="/category/Carrito"><ShoppingCartOutlined style={{fontSize:'23px'}} /></Link>
       </ul>
     </nav>
-    <ItemListContainer elemento ="Cucha 1"/>
     </>
   )
 }
 
-export default NavBar
+export default Nav
