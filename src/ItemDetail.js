@@ -1,15 +1,14 @@
-import {Productos} from './Utils'
 import Contador from './Contador'
 
-const ItemDetail = () => {
+const ItemDetail = (producto) => {
     
   return (
     <div>
-       <h2 className="card__title">{Productos.title}</h2>
-       <h2>${Productos.price}</h2>
-       <img src={Productos.image} className="card__img"/>
+       <h2 className="card__title">{producto.title}</h2>
+       <h2>${producto.price}</h2>
+       <img src={producto.image} className="card__img"/>
        <p><Contador/></p>
-       <p>{Productos.descripcion}</p>
+       <p>{producto.descripcion}</p>
     </div>
   )
 }

@@ -8,7 +8,6 @@ export let Productos = [
     {id: 2, title:"Cucha2", price:1820, cat: 'Cuchas', image: cucha2, Descripcion:"Cucha al para perro..."},
     {id: 3, title:"Alimento1", price:1820, cat: 'Alimentos', image: alimento1, Descripcion:"Alimento marca Royal Canin para perro tamaño pequeño..."},
     {id: 4, title:"Alimento2", price:1820, cat: 'Alimentos', image: alimento2, Descripcion:"Alimento marca Pedigree para perro adulto..."}
-
 ]
 
 
@@ -33,4 +32,17 @@ export const getProductByCategoryId = (id) => {
     })
 
     return pedido
+}
+
+export const getItemByCategoryId = (id) => {
+
+    let Descripcion = new Promise((res) => {
+        setTimeout(() => {
+            res(Productos.find(Productos=> {
+                return Productos.id === id})
+            )})
+    })
+
+    return Descripcion
+
 }

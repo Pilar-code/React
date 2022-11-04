@@ -10,7 +10,6 @@ const ItemListContainer = () => {
   const [productos,setProductos] = useState({})
 
   const {cat} = useParams()
-  console.log({cat});
 
   useEffect(()=>{
     if(cat){
