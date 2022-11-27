@@ -6,7 +6,7 @@ const Header = () => {
   return (
         <h1>
             <IconoNav />
-            <Link to="/"> <p>PetShop</p> </Link>
+            <Link to="/"> <p>Manifiesto</p> </Link>
         </h1>
   )
 }

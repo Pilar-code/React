@@ -4,14 +4,19 @@ import Main from './Main.js'
 import Nav from './NavBar.js';
 import 'antd/dist/antd.css'
 import { ToastContainer } from 'react-toastify';
+import CustomProvider from './CustomProvider.js';
+import { app } from "./firebase"
+
 
 function App() {
+
     return (
-    <BrowserRouter>
-    <Nav />
-    <Main />
-    <ToastContainer/>
-    </ BrowserRouter>
+            <CustomProvider children = {
+            <BrowserRouter>
+                < Nav/>
+                <Main />
+                <ToastContainer/>
+            </BrowserRouter>}/>
     )
 }
 

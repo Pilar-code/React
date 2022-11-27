@@ -1,14 +1,14 @@
 import React from 'react'
 import ItemDetail from './ItemDetail'
-import { Productos } from './Utils'
+import {Personajes} from './Utils'
 
-const Detail = (producto) => {
+const Detail = ({Personaje}) => {
   return (
     
     <section>
     {
-        Productos.map((Producto)=>{
-            return <ItemDetail key={Producto.id} {...Producto}/>
+        Personaje.map((Personaje)=>{
+            return <ItemDetail key={Personaje.cat} {...Personaje}/>
         })
     }
     </section>

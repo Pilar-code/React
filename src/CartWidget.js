@@ -1,12 +1,17 @@
-import React from 'react'
-import 'antd/dist/antd.css';
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import {contexto} from "./CustomProvider"
 
-const IconoNav = () => {
+const CartWidget = () => {
+
+  const cantidadProductos = useContext(contexto)
+
   return (
-    <>
-    <img src="https://img.icons8.com/external-filled-outline-icons-maxicons/55/000000/external-animal-pet-shop-filled-outline-filled-outline-icons-maxicons-9.png" alt="" ></img>
-    </>
+    <Link to = "/Carrito">
+    <div clasName="material-icons">shopping_cart</div>
+    <span>{cantidadProductos.cantidad}</span>
+    </Link>
   )
 }
 
-export default IconoNav
+export default CartWidget

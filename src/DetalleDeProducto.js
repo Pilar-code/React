@@ -1,8 +1,9 @@
 import React from 'react'
+import ItemDetail from './ItemDetail'
 
-const DetalleDeProducto = () => {
+const DetalleDePersonaje = () => {
   return (
-    <div>DetalleDeProducto</div>
+    <ItemDetail/>
   )
 }
 

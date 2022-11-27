@@ -4,6 +4,10 @@
     
 }
 
+main{
+    background-color: #bbc8e8;
+}
+
 #root{
     display: flex;
     flex-direction: column;
@@ -40,4 +44,20 @@
 .card__img{
     height: 300px;
     
+}
+
+.card__product{
+    display: flex;
+    flex-direction: row;
+}
+
+.product__card{
+    
+    width: 20rem;
+    display: inline-table;
+    background-color: #bbc8e8;
+    margin: 2rem;
+    text-align: center;
+    box-shadow: 0.9px 0px 8px 0.1px gray;
+    border-radius: 20px;
 }

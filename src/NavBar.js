@@ -1,8 +1,11 @@
 import React from 'react';
 import {ShoppingCartOutlined} from '@ant-design/icons'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import 'antd/dist/antd.css'; 
 import Header from './Header'
+import CartWidget from './CartWidget';
+import {db} from './firebase'
+
 
 const Nav = () => {
   return (
@@ -10,9 +13,9 @@ const Nav = () => {
     <nav id='nav__Style'>
       <Header />
       <ul>
-        <Link to="/category/Cuchas">Cuchas</Link>
-        <Link to="/category/Alimentos">Alimentos</Link>
-        <Link to="/category/Carrito"><ShoppingCartOutlined style={{fontSize:'23px'}} /></Link>
+        <NavLink to="/productos/No pasajero">No Pasajeros</NavLink>
+        <NavLink to="/productos/Pasajero">Pasajeros</NavLink>
+        <CartWidget/>
       </ul>
     </nav>
     </>

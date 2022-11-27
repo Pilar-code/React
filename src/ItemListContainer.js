@@ -1,41 +1,56 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import {db} from './firebase'
 import 'antd/dist/antd.css'
+import {collection, where, getDocs, query, doc} from 'firebase/firestore'
 import Catalogo from './Catalogo'
 import { getProductByCategoryId, getProducts } from "./Utils"
 import { toast } from "react-toastify"
 
+
 const ItemListContainer = () => {
 
-  const [productos,setProductos] = useState({})
+  const [Personaje,setPersonajes] = useState({})
 
   const {cat} = useParams()
 
-  useEffect(()=>{
+
+  useEffect(() => {
+     
     if(cat){
-      getProductByCategoryId(cat) 
-      .then((res) =>{
-        toast.dismiss(res)
-        setProductos(res)
+      const productosCollection = collection(db,"productos")
+      const filtro = query(productosCollection, where("category", "===", cat))
+      const categoriasProductos = getDocs(filtro)
+      categoriasProductos
+      .then((respuesta) => {
+        const productos = respuesta.docs.map(doc => ({...doc.data(), id: doc.id}))
+        console.log(productos)
       })
-      .catch((err) =>{
-        toast.error(err)
+      .catch((err) => {
+        console.log(err)
       })
-    }else{
-      getProducts()
+
+    }else{      
+      const productosCollection = collection(db,"productos") 
+      const consulta = getDocs(productosCollection)
+      consulta
       .then(respuesta => {
-        setProductos(respuesta)
+        respuesta.docs.map(doc =>{
+          const producto = doc.data();
+          producto.id = doc.id
+          return producto
+        })
       })
       .catch(error => {
-          toast.error("Error al cargar los productos, por favor intente de nuevo")
-          console.log(error)
+          toast.error("Error al cargar los personajes, por favor intente de nuevo")
+          
       })
     }
     },[cat])
 
   return (
     <>
-    {productos.length == 0 ? toast.info("Cargando productos", {autoClose: 500}) : <Catalogo productos={productos}/>}
+    {Personaje.length === 0 ? toast.info("Cargando personajes", {autoClose: 500}) : <Catalogo Personaje={Personaje.cat}/>}
     </>
   )
 
