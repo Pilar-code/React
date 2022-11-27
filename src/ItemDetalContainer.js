@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import { db } from './firebase'
+import { db, collection, doc } from './firebase'
 import Detail from './Detail'
 import { Personajes } from './Utils'
 import { getDocs } from 'firebase/firestore'
+import ItemDetail from './ItemDetail'
+import Item from './Item'
 
 const ItemDetalContainer = () => {
 
