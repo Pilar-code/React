@@ -13,7 +13,7 @@ const Nav = () => {
     <nav id='nav__Style'>
       <Header />
       <ul>
-        <NavLink to="/productos/No pasajero">No Pasajeros</NavLink>
+        <NavLink to="/productos/noPasajero">No Pasajeros</NavLink>
         <NavLink to="/productos/Pasajero">Pasajeros</NavLink>
         <CartWidget/>
       </ul>

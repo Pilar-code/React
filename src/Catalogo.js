@@ -1,12 +1,11 @@
 import Item from "./Item"
-import {Personajes} from './Utils'
 
-const Catalogo = (Personaje) => {
+const Catalogo = ({Personajes}) => {
   return (
     <section>
     {
-        Personajes.map((Personaj)=>{
-            return <Item key={Personaj.cat} {...Personaje}/>
+        Personajes.map((Personaje)=>{
+            return <Item key={Personaje.id} {...Personaje}/>
         })
     }
     </section>

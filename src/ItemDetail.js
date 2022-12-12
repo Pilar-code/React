@@ -1,32 +1,39 @@
-import Contador from './Contador'
-import React from 'react-router-dom'
-import { toast } from 'react-toastify'
-import {contexto} from "./CustomProvider"
-import {contador} from './Contador'
-import { useContext } from 'react'
+import { useContext, useState } from "react"
+import { contexto, useCarrito } from "./CustomProvider"
+import Contador from "./Contador"
 
-const ItemDetail = ({personaje}) => {
-  
-  const valorDelContexto = useContext(contexto)
+const ItemDetail = ({ Person }) => {
 
-  const handleOnAdd = (cantidadAgregada) => {
-    toast.info("se agregaron" + (cantidadAgregada) + "Productos al carrito", {autoClose: 500})
-  }
+    //const {agregarProducto} = useContext(contexto)
+    const { valorDelContexto } = useCarrito()
+    const [cantidad, setCantidad] = useState(1)
+    const [confirmado, setConfirmado] = useState(false)
 
-  const agregarAlCarrito = () => {
-    valorDelContexto.vaciarCarrito()
-  }
 
-  return (
-    <div className="product__card card">
-       <h2 className="card__title">{personaje.title}</h2>
-       <img src={personaje.img} className="card__img"/>
-       <p><contador/></p>
-       <p>{personaje.Descripcion}</p>
-       <contador handleOnAdd={handleOnAdd}/>
-       <button onClick={agregarAlCarrito}>vaciar carrito</button>
-    </div>
-  )
+    const handleOnAdd = (cantidadAgregada) => {
+        console.log("Se agregaron " + cantidadAgregada + " productos")
+        console.log(Person)
+        setCantidad(cantidad)
+        setConfirmado(true)
+    }
+
+    const agregarAlCarrito = () => {
+        valorDelContexto(Person,cantidad)
+    }
+
+    return (
+        <div  className="product__card card">
+            <h2 className="card__title">{Person.title} - ${Person.price}</h2>
+            <div className="detail-flex">
+                <img src={Person.img} alt={Person.title} className="card__img"/>
+                <div>
+                    <p>{Person.Description}</p>
+                    <Contador init={cantidad} handleOnAdd={handleOnAdd} />
+                    {confirmado && <button onClick={agregarAlCarrito}>agregar al carrito</button>}
+                </div>
+            </div>
+        </div>
+    )
+
 }
-
 export default ItemDetail

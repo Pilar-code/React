@@ -6,7 +6,7 @@ import EaganTehrani from './img/EaganTehrani.png'
 export let Personajes = [
     {id: 1, title:"Ben Stone", cat: 'Pasajero',Image: BenStone, Descripcion:"Cucha gris para perro..."},
     {id: 2, title:"Cal Stone", cat: 'Pasajero', Image: CalStone, Descripcion:"Cucha al para perro..."},
-    {id: 3, title:"Drea Mikami", cat: 'No pasajero', Image: DreaMikami,Descripcion:"Alimento marca Royal Canin para perro tamaño pequeño..."},
+    {id: 3, title:"Drea Mikami", cat: 'noPasajero', Image: DreaMikami,Descripcion:"Alimento marca Royal Canin para perro tamaño pequeño..."},
     {id: 4, title:"Eagan Tehrani",  cat: 'Pasajero', Image: EaganTehrani,Descripcion:"Alimento marca Pedigree para perro adulto..."}
 ]
 
